@@ -458,7 +458,7 @@ XboxdrvDaemon::on_connect(ControllerSlotPtr slot)
     args.push_back(controller->get_usbpath());
     args.push_back(controller->get_usbid());
     args.push_back(controller->get_name());
-    args.push_back(std::string(slot->get_id()))
+    args.push_back(boost::lexical_cast<string>(slot->get_id()));
     spawn_exe(args);
   }
 }
